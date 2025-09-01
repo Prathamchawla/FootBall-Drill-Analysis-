@@ -1,0 +1,64 @@
+
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Football Drill Performance Dashboard</title>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <style>
+            body { font-family: Arial, sans-serif; margin: 20px; }
+            h1 { text-align: center; }
+            .container { max-width: 800px; margin: auto; }
+            canvas { margin: 20px 0; }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Football Drill Performance Dashboard</h1>
+            <h2>Form Accuracy</h2>
+            <canvas id="formChart"></canvas>
+            <h2>Timing Consistency</h2>
+            <canvas id="timingChart"></canvas>
+            <h2>Drill Completion</h2>
+            <p>Completed Cones: [1, 2, 3, 4, 5, 6]</p>
+            <p>Missing Cones: []</p>
+            <p>Ball Interaction: Yes</p>
+            <h2>Feedback</h2>
+            <ul>
+                <li>Improve left leg form: Bend your knee more during turns or sprints to match the coach's posture.</li><li>Timing issue: Your actions are off by ~27 frames. Try to match the coach's pace, especially during transitions.</li><li>Great job! You interacted with all cones as in the coach's drill.</li><li>Good ball control: You successfully interacted with the ball.</li>
+            </ul>
+        </div>
+        <script>
+            const formCtx = document.getElementById('formChart').getContext('2d');
+            new Chart(formCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Left Leg', 'Right Leg', 'Overall'],
+                    datasets: [{
+                        label: 'Angle Difference (degrees)',
+                        data: [19.996276999505785, 
+                               14.98910472062643, 
+                               17.49269086006611],
+                        backgroundColor: ['#36A2EB', '#FF6384', '#FFCE56']
+                    }]
+                },
+                options: { scales: { y: { beginAtZero: true, title: { display: true, text: 'Degrees' } } } }
+            });
+
+            const timingCtx = document.getElementById('timingChart').getContext('2d');
+            new Chart(timingCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Avg Frame Offset', 'DTW Distance'],
+                    datasets: [{
+                        label: 'Timing Metrics',
+                        data: [27.272727272727273, 
+                               32.338034639120806],
+                        backgroundColor: ['#4BC0C0', '#9966FF']
+                    }]
+                },
+                options: { scales: { y: { beginAtZero: true, title: { display: true, text: 'Value' } } } }
+            });
+        </script>
+    </body>
+    </html>
+    

@@ -1,0 +1,23 @@
+{
+    "form_accuracy": {
+        "left_leg_angle_diff": 19.996276999505785,
+        "right_leg_angle_diff": 14.98910472062643,
+        "overall_angle_diff": 17.49269086006611
+    },
+    "timing_consistency": {
+        "avg_frame_offset": 27.272727272727273,
+        "dtw_distance": 32.338034639120806
+    },
+    "drill_completion": {
+        "completed_cones": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+        ],
+        "missing_cones": [],
+        "ball_interaction": true
+    }
+}
